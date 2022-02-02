@@ -8,10 +8,14 @@
     <title>Pokémon</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="title">Random Pokémon</h1>
-      <div class="pokemonContainer" id="pokemonContainer">
+    <div class="main">
+      <h1 class="main__title">Random Pokémon</h1>
+      <div class="main__pokemonContainer" id="pokemonContainer">
 
+      </div>
+      <div class="main__inputContainer">
+        <input type="text" class="main__input" placeholder="Enter Pokémon name" id="input">
+        <button type="submit" class="main__submit" onclick="submitPokemon()">Confirm</button>
       </div>
     </div>
     <script src="js/script.js"></script>

@@ -1,2 +1,2 @@
-*{margin:0;padding:0;box-sizing:border-box}body::-webkit-scrollbar{display:none}.container{display:flex;flex-direction:column;justify-content:center;text-align:center}
+*{margin:0;padding:0;box-sizing:border-box}body::-webkit-scrollbar{display:none}.main{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.5rem}.main__inputContainer{display:flex;flex-direction:column;justify-content:center;gap:1rem;width:15%}.main__input{outline:none;border:none;text-align:center;color:#fafafa;background-color:#494949;height:1.5rem;border-radius:.25vw}
 /*# sourceMappingURL=styles.css.map */

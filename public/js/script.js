@@ -1,11 +1,7 @@
 const pokemonContainer = document.getElementById('pokemonContainer');
+const inputPokemon = document.getElementById('input');
 
 window.onload = async e => {
-    // fetch('/pokemon', {method: 'POST', headers: {
-    //     'Content-type': 'text/plain'
-    // }})
-    // .then(res => res.json())
-    // .then(pokemonImg => console.log(pokemonImg));
 
     fetch('/pokemon', {method: 'POST', headers: {
         'Content-type': 'application/json'
@@ -21,9 +17,13 @@ function setPokemon(newPokemon) {
         pokemonContainer.children.pokemon.textContent = newPokemon;
     } else {
         const pokemonImgElement = document.createElement('img');
-        // pokemonImgElement.classList.add('test'); eventual scss bem class
+        pokemonImgElement.classList.add('main__pokemon');
         pokemonImgElement.setAttribute('src', newPokemon),
         pokemonContainer.appendChild(pokemonImgElement);
     }
 
+}
+
+function submitPokemon() {
+    console.log(inputPokemon.value);
 }
