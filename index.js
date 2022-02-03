@@ -20,8 +20,11 @@ app.post("/pokemon", async (req, res) => {
     `https://pokeapi.co/api/v2/pokemon/${randy(1, 898)}/`
   ).then((res) => res.json());
 
+  //console.log(randomPokemon);
+
   res.send({
-    randomPokemon: randomPokemon.sprites.other["official-artwork"].front_default
+    randomPokemon: randomPokemon.sprites.other["official-artwork"].front_default,
+    name: randomPokemon.species.name
   });
 });
 
