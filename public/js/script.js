@@ -39,10 +39,22 @@ function setPokemon(data) {
 
 function submitPokemon() {
   if (inputPokemon.value) {
-    console.log(inputPokemon.value, currentPokemon);
+    validateString(inputPokemon.value) === currentPokemon ? handleCorrectSubmission() : handleIncorrectSubmission();
     inputPokemon.value = "";
     getRandomPokemon();
   } else {
       invalidSubmission();
   }
+}
+
+function validateString(name) {
+  return(name.slice(0,1).toLowerCase() + name.slice(1,name.length));
+}
+
+function handleCorrectSubmission() {
+  console.log('correct');
+}
+
+function handleIncorrectSubmission() {
+  console.log('incorrect');
 }
