@@ -23,4 +23,16 @@
         border-radius: .25vw;
     }
 
+    &__scoreContainer {
+        text-align: center;
+    }
+
+    &__score.playing {
+        color: green;
+    }
+
+    &__score.end {
+        color: red;
+    }
+
 }

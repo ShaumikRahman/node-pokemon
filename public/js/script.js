@@ -1,7 +1,10 @@
 const pokemonContainer = document.getElementById("pokemonContainer");
 const inputPokemon = document.getElementById("input");
+const scoreElement = document.getElementById("score");
 
 let currentPokemon = "";
+let score = 0;
+let newGame = false;
 
 window.onload = async (e) => {
   getRandomPokemon();
@@ -43,7 +46,7 @@ function submitPokemon() {
     inputPokemon.value = "";
     getRandomPokemon();
   } else {
-      invalidSubmission();
+      emptySubmission();
   }
 }
 
@@ -51,10 +54,40 @@ function validateString(name) {
   return(name.slice(0,1).toLowerCase() + name.slice(1,name.length));
 }
 
+function emptySubmission() {
+  endScore();
+  getRandomPokemon();
+}
+
 function handleCorrectSubmission() {
-  console.log('correct');
+
+  if (newGame) {
+    newGame = false;
+    score = 0;
+  }
+
+  // correct trigger
+  score++;
+  showScore();
+
 }
 
 function handleIncorrectSubmission() {
-  console.log('incorrect');
+  // incorrect trigger
+  endScore();
+}
+
+function showScore() {
+  scoreElement.classList.remove('end');
+  scoreElement.classList.add('playing');
+
+  scoreElement.textContent = `Score: ${score}`
+}
+
+function endScore() {
+  scoreElement.classList.remove('playing');
+  scoreElement.classList.add('end');
+
+  scoreElement.textContent = `Final score: ${score}`
+  newGame = true;
 }
