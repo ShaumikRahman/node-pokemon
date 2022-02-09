@@ -35,4 +35,18 @@
         color: red;
     }
 
+    &__answerContainer {
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        border-radius: 1rem;
+        border: 1px solid #ff4747;
+        background-color: #ff6363;
+        padding: 1rem;
+    }
+
+    &__answerContainer.show {
+        opacity: 1;
+        transition: opacity 300ms ease-in-out;
+    }
+
 }

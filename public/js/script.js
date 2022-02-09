@@ -1,6 +1,8 @@
 const pokemonContainer = document.getElementById("pokemonContainer");
 const inputPokemon = document.getElementById("input");
 const scoreElement = document.getElementById("score");
+const answerContainer = document.getElementById("answerContainer");
+
 
 let currentPokemon = "";
 let score = 0;
@@ -41,6 +43,7 @@ function setPokemon(data) {
 }
 
 function submitPokemon() {
+  removeAnswer();
   if (inputPokemon.value) {
     validateString(inputPokemon.value) === currentPokemon ? handleCorrectSubmission() : handleIncorrectSubmission();
     inputPokemon.value = "";
@@ -73,8 +76,17 @@ function handleCorrectSubmission() {
 }
 
 function handleIncorrectSubmission() {
-  // incorrect trigger
+  endGame();
   endScore();
+}
+
+function removeAnswer() {
+  answerContainer.classList.remove('show');
+}
+
+function endGame() {
+  answerContainer.children[0].textContent = `Answer was ${currentPokemon}`;
+  answerContainer.classList.add('show');
 }
 
 function showScore() {
