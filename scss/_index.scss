@@ -4,6 +4,7 @@
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    min-height: 100vh;
 
     &__inputContainer {
         display: flex;
@@ -21,6 +22,10 @@
         background-color: #494949;
         height: 1.5rem;
         border-radius: .25vw;
+    }
+
+    &__pokemon {
+        width: clamp(16rem, 32vw, 64rem);
     }
 
     &__scoreContainer {
