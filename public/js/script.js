@@ -8,6 +8,7 @@ let currentPokemon = "";
 let score = 0;
 let newGame = false;
 
+
 window.onload = async (e) => {
   getRandomPokemon();
 };
@@ -43,6 +44,7 @@ function setPokemon(data) {
 }
 
 function submitPokemon() {
+  window.scrollTo(0, 38);
   removeAnswer();
   if (inputPokemon.value) {
     validateString(inputPokemon.value) === currentPokemon ? handleCorrectSubmission() : handleIncorrectSubmission();

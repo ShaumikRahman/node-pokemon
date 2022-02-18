@@ -4,7 +4,10 @@
     align-items: center;
     text-align: center;
     gap: 1.5rem;
-    min-height: 100vh;
+
+    @media (max-width: 768px) {
+        gap: 0.25rem;;
+    }
 
     &__inputContainer {
         display: flex;
@@ -30,6 +33,14 @@
 
     &__submit {
         cursor: pointer;
+    }
+
+    &__pokemonContainer {
+        min-height: 40vh;
+
+        @media (max-width: 768px) {
+            min-height: 60vh;
+        }
     }
 
     &__pokemon {
@@ -60,6 +71,12 @@
     &__answerContainer.show {
         opacity: 1;
         transition: opacity 300ms ease-in-out;
+    }
+
+    &__footer {
+        text-align: center;
+        width: 66%;
+        margin: 3rem 0rem;
     }
 
 }
