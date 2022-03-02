@@ -1,7 +1,9 @@
+const body = document.getElementById("body");
 const pokemonContainer = document.getElementById("pokemonContainer");
 const inputPokemon = document.getElementById("input");
 const scoreElement = document.getElementById("score");
 const answerContainer = document.getElementById("answerContainer");
+const theme = document.getElementById("theme");
 
 
 let currentPokemon = "";
@@ -18,6 +20,13 @@ window.onkeyup = (e) => {
     submitPokemon();
   }
 };
+
+theme.onclick = (e) => {
+  body.classList.toggle("dark");
+  for (let i = 0; i < document.getElementsByClassName("text").length; i++) {
+    document.getElementsByClassName("text")[i].classList.toggle("dark");
+  }
+}
 
 function getRandomPokemon() {
   fetch("/pokemon", {

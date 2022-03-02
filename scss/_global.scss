@@ -11,4 +11,17 @@ body::-webkit-scrollbar {
 
 body {
     overflow-x: hidden;
+    background-color: #fafafa;
+    transition: background-color 200ms ease-in-out;
+}
+
+body.dark {
+    background-color: #263238;
+    transition: background-color 200ms ease-in-out;
+}
+
+.textDark {
+    color: #263238;
+    transition: color 200ms ease-in-out;
+
 }
