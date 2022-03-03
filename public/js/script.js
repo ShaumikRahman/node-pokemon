@@ -13,7 +13,7 @@ let newGame = false;
 
 window.onload = async (e) => {
   getRandomPokemon();
-};
+};  
 
 window.onkeyup = (e) => {
   if (e.key === "Enter") {
