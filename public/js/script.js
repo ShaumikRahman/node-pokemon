@@ -1,5 +1,5 @@
 const body = document.getElementById("body");
-const pokemonContainer = document.getElementById("pokemonContainer");
+const pokemon = document.getElementById("pokemon");
 const inputPokemon = document.getElementById("input");
 const scoreElement = document.getElementById("score");
 const answerContainer = document.getElementById("answerContainer");
@@ -40,19 +40,13 @@ function getRandomPokemon() {
 }
 
 function setPokemon(data) {
-  if (pokemonContainer.children[0]) {
-    pokemonContainer.children[0].setAttribute("src", data.randomPokemon);
-  } else {
-    const pokemonImgElement = document.createElement("img");
-    pokemonImgElement.classList.add("main__pokemon");
-    pokemonImgElement.setAttribute("src", data.randomPokemon),
-      pokemonContainer.appendChild(pokemonImgElement);
-  }
+  pokemon.setAttribute("src", data.randomPokemon)
 
   currentPokemon = data.name;
 }
 
 function submitPokemon() {
+  pokemon.src = "img/loading.gif";
   window.scrollTo(0, 38);
   removeAnswer();
   if (inputPokemon.value) {
